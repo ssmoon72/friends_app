@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app='app'>
+  <head>
+    <meta charset="utf-8">
+    <title>Friends</title>
+    <!-- Load Angular and Angular Route -->
+    <script src="angular/angular.js" charset="utf-8"></script>
+    <script src="angular-route/angular-route.js" charset="utf-8"></script>
+    <!-- Loading materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+    <!-- Fonts for materialize -->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- jquery for materialize -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- load app.js which shows which partials to load for which urls -->
+    <script src="assets/app.js" charset="utf-8"></script>
+    <!-- Loading all factories and controllers necessary for the app -->
+    <script src="assets/factories/friendsFactory.js" charset="utf-8"></script>
+    <script src="assets/controllers/newFriendController.js" charset="utf-8"></script>
+    <script src="assets/controllers/editController.js" charset="utf-8"></script>
+    <script src="assets/controllers/showController.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1><em> Welcome to Friends App </em> </h1>
+    <hr>
+      <div ng-app='app' class="center-align">
+        <a href="#!/"> All Friends </a> | <a href="#!/friends">Create Friends</a>
+        <div ng-view=""></div>
+      </div>
+  </body>
+</html>

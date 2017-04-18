@@ -1,0 +1,41 @@
+<!-- Partial that shows when creating a new friend -->
+<h2 class="center-align">New Friend</h2>
+<div class="row">
+  <form ng-submit="create()" class='col s6 push-s3 pull-s3'>
+    <label for="first_name"> First Name: </label>
+    <input type="text" name="first_name" ng-model='friend.first_name'>
+    <label for="last_name">Last Name: </label>
+    <input type="text" name="last_name" ng-model='friend.last_name'>
+    <label for="birthday">Birthday: </label>
+    <input type="date" name="birthday" ng-model='friend.birthday'>
+    <input type="submit" name="submit" value="Add New Friend">
+  </form>
+</div>
+<div class="row">
+  <table class='col s8'>
+    <thead>
+      <tr>
+        <th> First Name </th>
+        <th> Last Name </th>
+        <th> Birthday </th>
+        <th> Show </th>
+        <th> Edit </th>
+        <th> Delete </th>
+      </tr>
+    </thead>
+    <tbody ng-repeat='friend in friends | orderBy: sortType: sortReverse | filter: {first_name: nameFilter, birthday: birthdayFilter}'>
+      <tr>
+        <td> {{friend.first_name}} </td>
+        <td> {{friend.last_name}} </td>
+        <td> {{friend.birthday}} </td>
+        <td> <a href="#!/friends/show/{{friend._id}}"> Show Friend </a></td>
+        <td> <a href="#!/friends/edit/{{friend._id}}" > Edit Friend </a></td>
+        <td> <a href="" ng-click="delete(friend._id)">Delete Friend </a></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class='input-field col s4'>
+    <input id="name_search" type="text" placeholder="Filter by First Name" ng-model="nameFilter">
+    <input id="birthday_search" type="date" placeholder="Filter by Birthday" ng-model="birthdayFilter">
+  </div>
+</div>

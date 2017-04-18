@@ -1,0 +1,13 @@
+<!-- Partial that shows when going to edit a friend -->
+<h1> Edit </h1>
+<div class='row'>
+<form ng-submit="update()" class="col s8 push-s2 pull-s2">
+  <label for="first_name"> First Name: </label>
+  <input type="text" name="first_name" ng-model="friend.first_name">
+  <label for="last_name">Last Name: </label>
+  <input type="text" name="last_name" value="friend.last_name" ng-model="friend.last_name">
+  <label for="birthday">Birthday: </label>
+  <input type="date" name="birthday" value="friend.birthday" ng-model="friend.birthday">
+  <input type="submit" name="submit" value="Edit Friend">
+</form>
+</div>
